@@ -14,7 +14,7 @@ def fixed_point(f,init,N=100):
 
     p = [init]
     for i in range(0,N):
-        p.append(f(p[i-1]))
+        p.append(f(p[i]))
 
     return p
 

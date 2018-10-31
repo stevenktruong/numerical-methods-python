@@ -20,8 +20,8 @@ def steffensen(f,init,N=100):
     p = [[init]]
 
     for i in range(0,N):
-        p[i].append( f(p[i][0]) ) # p_i^(1)
-        p[i].append( f(p[i][1]) ) # p_i^(2)
+        p[i].append( f(p[i][0]) ) # p_1^(i)
+        p[i].append( f(p[i][1]) ) # p_2^(i)
         p.append([ delta_squared(p[i]) ]) # Initialization for next step
 
     return p
@@ -35,6 +35,6 @@ p = steffensen(f,1,2)
 for i in range(0,len(p)):
     for j in range(0,len(p[i])):
         if p[i][j] > 0:
-            print(f"p_{i}^{j}  {p[i][j]}")
+            print(f"p_{j}^{i}  {p[i][j]}")
         else:
-            print(f"p_{i}^{j} {p[i][j]}")
+            print(f"p_{j}^{i} {p[i][j]}")
